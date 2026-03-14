@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18BFCDD84B3352B1E875696A /* AgentDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CE2B65203C260F2CE9A56A /* AgentDiscoveryService.swift */; };
+		252518559590586B94C3EC69 /* report_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 93096A1F52E5A28802508F93 /* report_template.html */; };
+		26B0D9DC12BECE9F8A04EDAB /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA1868668DD14589E18C40D /* ReportDetailView.swift */; };
+		35199C7A2F6332340ADDADDF /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDFC6E5403349556CC4780 /* ConfigService.swift */; };
+		374ACF09395A0EA7A73C3BAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F314B3BD51FA5BB431014B /* ContentView.swift */; };
+		3AB831DDC7168B9A7513DFBD /* VaultBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E9ECB4873E007BF3CC57 /* VaultBrowserView.swift */; };
+		40688F46080D3AD185E0F684 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9E1259AF49A4098B8F1C7 /* DashboardView.swift */; };
+		50647C283D9FA54CF8F69F71 /* AgentRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0ABE6C6A0D843FF78CA0D /* AgentRun.swift */; };
+		52F3F60ECAE83E334638CCE9 /* RunOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9922F8D8A3EE103B479A13 /* RunOutputView.swift */; };
+		6063ABA2801FBB4BEFCA9F4D /* VaultBrowserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDD79FBB772BE0864662EDD /* VaultBrowserService.swift */; };
+		62D7FBFA5F302BAD0BD11E4E /* MarkdownPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4487A4B3A161CEF1B04FA9A /* MarkdownPreviewView.swift */; };
+		694AEF72132B22F2ECD427C7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21962BA68F4220F8CA5D5161 /* AppState.swift */; };
+		6B4C718B07633E1EE245D6BA /* MarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71779B5ABDABEC12C076860 /* MarkdownRenderer.swift */; };
+		77DD1641DC8C077041408A4E /* VaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8633FB0D7F9A8DF43519B /* VaultConfig.swift */; };
+		78AED07536D4B5D6CD5231CD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12431AA0586B348F606EFA /* SettingsView.swift */; };
+		8089A68F597A48B73198D2CC /* AgentRunnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72076E51AD11A14E390684C0 /* AgentRunnerService.swift */; };
+		9AEA9C3052F9595EA89477CE /* ObsidianToolkitManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A9E111AF3255B08BADBE92 /* ObsidianToolkitManagerApp.swift */; };
+		9D525A4634D45DA5EA1ADF3D /* AgentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC1937748BC1B9A73E5B7C /* AgentCard.swift */; };
+		A8DE7FC095A799548C84F178 /* VaultNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CEDF41A7AC0723BFF65D74 /* VaultNode.swift */; };
+		AE473EBE3F77F55563F8D722 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CAA1C19231068CCB9AFA84 /* ProcessRunner.swift */; };
+		C41C653A7B321A639A45302D /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4E2E64EE9602D7DFAC189 /* ReportListView.swift */; };
+		CE932098D2C674D6BB537972 /* VaultHealthCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAD6C08DAC633DDD314DD7 /* VaultHealthCard.swift */; };
+		D957BEC346CB1C1656DA5A8C /* AgentManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0594D9B7F8CCEE6B8DA0FED /* AgentManifest.swift */; };
+		DAD215270760164716C57D53 /* AgentParameterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E356F5315508888F015B5217 /* AgentParameterForm.swift */; };
+		E1EFC66D661F00DB8DD79E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571E47C25AEB4C57195179F2 /* Assets.xcassets */; };
+		F3C9993F294A3FB6FB15822E /* AgentRunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AFFA4ADE606178FF32AAFE /* AgentRunnerView.swift */; };
+		F700D8FA0E20886FC6AAE24D /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50528E3D3D29B51F5301DD7 /* ReportService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06FA863F0C0CEA497AF03B56 /* ObsidianToolkitManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObsidianToolkitManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09C9E1259AF49A4098B8F1C7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		0A2091F2D43A04701595D4AB /* ObsidianToolkitManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObsidianToolkitManager.entitlements; sourceTree = "<group>"; };
+		0DA1868668DD14589E18C40D /* ReportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
+		21962BA68F4220F8CA5D5161 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		25CE2B65203C260F2CE9A56A /* AgentDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDiscoveryService.swift; sourceTree = "<group>"; };
+		2ED0ABE6C6A0D843FF78CA0D /* AgentRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentRun.swift; sourceTree = "<group>"; };
+		32DC1937748BC1B9A73E5B7C /* AgentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCard.swift; sourceTree = "<group>"; };
+		4B9922F8D8A3EE103B479A13 /* RunOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunOutputView.swift; sourceTree = "<group>"; };
+		56A9E111AF3255B08BADBE92 /* ObsidianToolkitManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianToolkitManagerApp.swift; sourceTree = "<group>"; };
+		571E47C25AEB4C57195179F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5ADAD6C08DAC633DDD314DD7 /* VaultHealthCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultHealthCard.swift; sourceTree = "<group>"; };
+		72076E51AD11A14E390684C0 /* AgentRunnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentRunnerService.swift; sourceTree = "<group>"; };
+		72D8633FB0D7F9A8DF43519B /* VaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultConfig.swift; sourceTree = "<group>"; };
+		75A4E2E64EE9602D7DFAC189 /* ReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
+		8B12431AA0586B348F606EFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		90CEDF41A7AC0723BFF65D74 /* VaultNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultNode.swift; sourceTree = "<group>"; };
+		93096A1F52E5A28802508F93 /* report_template.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = report_template.html; sourceTree = "<group>"; };
+		A71779B5ABDABEC12C076860 /* MarkdownRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
+		A7F314B3BD51FA5BB431014B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A8CAA1C19231068CCB9AFA84 /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		AFFDFC6E5403349556CC4780 /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		C0594D9B7F8CCEE6B8DA0FED /* AgentManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentManifest.swift; sourceTree = "<group>"; };
+		DBDD79FBB772BE0864662EDD /* VaultBrowserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBrowserService.swift; sourceTree = "<group>"; };
+		E356F5315508888F015B5217 /* AgentParameterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentParameterForm.swift; sourceTree = "<group>"; };
+		E50528E3D3D29B51F5301DD7 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		F015E9ECB4873E007BF3CC57 /* VaultBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBrowserView.swift; sourceTree = "<group>"; };
+		F1AFFA4ADE606178FF32AAFE /* AgentRunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentRunnerView.swift; sourceTree = "<group>"; };
+		F4487A4B3A161CEF1B04FA9A /* MarkdownPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownPreviewView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		49B49276C166BC9338F42DDC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				571E47C25AEB4C57195179F2 /* Assets.xcassets */,
+				93096A1F52E5A28802508F93 /* report_template.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50E68420E24D097343E8F4AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06FA863F0C0CEA497AF03B56 /* ObsidianToolkitManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FBFC2FF28E7FBD614EFE54E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A71779B5ABDABEC12C076860 /* MarkdownRenderer.swift */,
+				A8CAA1C19231068CCB9AFA84 /* ProcessRunner.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8DF9C3EBCEB0B5D2C1480EA0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A7F314B3BD51FA5BB431014B /* ContentView.swift */,
+				56A9E111AF3255B08BADBE92 /* ObsidianToolkitManagerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		94FC1C1697C9A092805A6CF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF3957C2DF5431CD5683365C /* AgentRunner */,
+				B72495D1F8401792E83D4E5E /* Dashboard */,
+				D5E9BADA6A55ABF2F06A8033 /* Reports */,
+				A5B08E928441BB37733A945A /* Settings */,
+				9EB9A3DCA7516441746037F4 /* VaultBrowser */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9EB9A3DCA7516441746037F4 /* VaultBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				F4487A4B3A161CEF1B04FA9A /* MarkdownPreviewView.swift */,
+				F015E9ECB4873E007BF3CC57 /* VaultBrowserView.swift */,
+			);
+			path = VaultBrowser;
+			sourceTree = "<group>";
+		};
+		A5670AF069EF8B740A6BD5D2 /* ObsidianToolkitManager */ = {
+			isa = PBXGroup;
+			children = (
+				0A2091F2D43A04701595D4AB /* ObsidianToolkitManager.entitlements */,
+				8DF9C3EBCEB0B5D2C1480EA0 /* App */,
+				B190D855ACB8C1C26FC527E5 /* Models */,
+				49B49276C166BC9338F42DDC /* Resources */,
+				D31899F21C40F71E61A4D6E0 /* Services */,
+				5FBFC2FF28E7FBD614EFE54E /* Utilities */,
+				94FC1C1697C9A092805A6CF7 /* Views */,
+			);
+			path = ObsidianToolkitManager;
+			sourceTree = "<group>";
+		};
+		A5B08E928441BB37733A945A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B12431AA0586B348F606EFA /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AF3957C2DF5431CD5683365C /* AgentRunner */ = {
+			isa = PBXGroup;
+			children = (
+				E356F5315508888F015B5217 /* AgentParameterForm.swift */,
+				F1AFFA4ADE606178FF32AAFE /* AgentRunnerView.swift */,
+				4B9922F8D8A3EE103B479A13 /* RunOutputView.swift */,
+			);
+			path = AgentRunner;
+			sourceTree = "<group>";
+		};
+		B190D855ACB8C1C26FC527E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0594D9B7F8CCEE6B8DA0FED /* AgentManifest.swift */,
+				2ED0ABE6C6A0D843FF78CA0D /* AgentRun.swift */,
+				21962BA68F4220F8CA5D5161 /* AppState.swift */,
+				72D8633FB0D7F9A8DF43519B /* VaultConfig.swift */,
+				90CEDF41A7AC0723BFF65D74 /* VaultNode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B72495D1F8401792E83D4E5E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				32DC1937748BC1B9A73E5B7C /* AgentCard.swift */,
+				09C9E1259AF49A4098B8F1C7 /* DashboardView.swift */,
+				5ADAD6C08DAC633DDD314DD7 /* VaultHealthCard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		C7017FE6D73904B454BA4666 = {
+			isa = PBXGroup;
+			children = (
+				A5670AF069EF8B740A6BD5D2 /* ObsidianToolkitManager */,
+				50E68420E24D097343E8F4AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D31899F21C40F71E61A4D6E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				25CE2B65203C260F2CE9A56A /* AgentDiscoveryService.swift */,
+				72076E51AD11A14E390684C0 /* AgentRunnerService.swift */,
+				AFFDFC6E5403349556CC4780 /* ConfigService.swift */,
+				E50528E3D3D29B51F5301DD7 /* ReportService.swift */,
+				DBDD79FBB772BE0864662EDD /* VaultBrowserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D5E9BADA6A55ABF2F06A8033 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				0DA1868668DD14589E18C40D /* ReportDetailView.swift */,
+				75A4E2E64EE9602D7DFAC189 /* ReportListView.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		852D4C3F4143EF027B6A92BF /* ObsidianToolkitManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4EC01DADE715651A5B376B8 /* Build configuration list for PBXNativeTarget "ObsidianToolkitManager" */;
+			buildPhases = (
+				81E203B8DB826CEE91F8255A /* Sources */,
+				29C08758BC58831ADF3500D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObsidianToolkitManager;
+			packageProductDependencies = (
+			);
+			productName = ObsidianToolkitManager;
+			productReference = 06FA863F0C0CEA497AF03B56 /* ObsidianToolkitManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E98F9C8F497596DD6B983ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = D427F2BAAD5AFD16751E43E8 /* Build configuration list for PBXProject "ObsidianToolkitManager" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C7017FE6D73904B454BA4666;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 50E68420E24D097343E8F4AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				852D4C3F4143EF027B6A92BF /* ObsidianToolkitManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29C08758BC58831ADF3500D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1EFC66D661F00DB8DD79E9F /* Assets.xcassets in Resources */,
+				252518559590586B94C3EC69 /* report_template.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81E203B8DB826CEE91F8255A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D525A4634D45DA5EA1ADF3D /* AgentCard.swift in Sources */,
+				18BFCDD84B3352B1E875696A /* AgentDiscoveryService.swift in Sources */,
+				D957BEC346CB1C1656DA5A8C /* AgentManifest.swift in Sources */,
+				DAD215270760164716C57D53 /* AgentParameterForm.swift in Sources */,
+				50647C283D9FA54CF8F69F71 /* AgentRun.swift in Sources */,
+				8089A68F597A48B73198D2CC /* AgentRunnerService.swift in Sources */,
+				F3C9993F294A3FB6FB15822E /* AgentRunnerView.swift in Sources */,
+				694AEF72132B22F2ECD427C7 /* AppState.swift in Sources */,
+				35199C7A2F6332340ADDADDF /* ConfigService.swift in Sources */,
+				374ACF09395A0EA7A73C3BAC /* ContentView.swift in Sources */,
+				40688F46080D3AD185E0F684 /* DashboardView.swift in Sources */,
+				62D7FBFA5F302BAD0BD11E4E /* MarkdownPreviewView.swift in Sources */,
+				6B4C718B07633E1EE245D6BA /* MarkdownRenderer.swift in Sources */,
+				9AEA9C3052F9595EA89477CE /* ObsidianToolkitManagerApp.swift in Sources */,
+				AE473EBE3F77F55563F8D722 /* ProcessRunner.swift in Sources */,
+				26B0D9DC12BECE9F8A04EDAB /* ReportDetailView.swift in Sources */,
+				C41C653A7B321A639A45302D /* ReportListView.swift in Sources */,
+				F700D8FA0E20886FC6AAE24D /* ReportService.swift in Sources */,
+				52F3F60ECAE83E334638CCE9 /* RunOutputView.swift in Sources */,
+				78AED07536D4B5D6CD5231CD /* SettingsView.swift in Sources */,
+				6063ABA2801FBB4BEFCA9F4D /* VaultBrowserService.swift in Sources */,
+				3AB831DDC7168B9A7513DFBD /* VaultBrowserView.swift in Sources */,
+				77DD1641DC8C077041408A4E /* VaultConfig.swift in Sources */,
+				CE932098D2C674D6BB537972 /* VaultHealthCard.swift in Sources */,
+				A8DE7FC095A799548C84F178 /* VaultNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4F0DB669B6E78E2811870A83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		8A9D45A352853E568430404D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		A8148AD87E2E3C15F508C08F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = ObsidianToolkitManager/ObsidianToolkitManager.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trevor.ObsidianToolkitManager;
+				PRODUCT_NAME = "Obsidian Toolkit Manager";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C90D66AE0E15E99BB8B948EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = ObsidianToolkitManager/ObsidianToolkitManager.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trevor.ObsidianToolkitManager;
+				PRODUCT_NAME = "Obsidian Toolkit Manager";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4EC01DADE715651A5B376B8 /* Build configuration list for PBXNativeTarget "ObsidianToolkitManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90D66AE0E15E99BB8B948EC /* Debug */,
+				A8148AD87E2E3C15F508C08F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D427F2BAAD5AFD16751E43E8 /* Build configuration list for PBXProject "ObsidianToolkitManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0DB669B6E78E2811870A83 /* Debug */,
+				8A9D45A352853E568430404D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E98F9C8F497596DD6B983ED /* Project object */;
+}

@@ -1,0 +1,36 @@
+name: ObsidianToolkitManager
+options:
+  bundleIdPrefix: com.trevor
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  ObsidianToolkitManager:
+    type: application
+    platform: macOS
+    sources:
+      - path: ObsidianToolkitManager
+        excludes:
+          - Resources/Assets.xcassets/AppIcon.appiconset
+    resources:
+      - path: ObsidianToolkitManager/Resources/Assets.xcassets
+      - path: ObsidianToolkitManager/Resources/report_template.html
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.trevor.ObsidianToolkitManager
+        PRODUCT_NAME: "Obsidian Toolkit Manager"
+        INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.developer-tools"
+        CODE_SIGN_ENTITLEMENTS: ObsidianToolkitManager/ObsidianToolkitManager.entitlements
+        ENABLE_APP_SANDBOX: NO
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: NO
+    entitlements:
+      path: ObsidianToolkitManager/ObsidianToolkitManager.entitlements
