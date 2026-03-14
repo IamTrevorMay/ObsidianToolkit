@@ -30,6 +30,8 @@ struct ContentView: View {
                     VaultBrowserView()
                 case .reports:
                     ReportListView()
+                case .gitSync:
+                    GitSyncView()
                 case .settings:
                     SettingsView()
                 }

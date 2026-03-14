@@ -77,6 +77,16 @@ AGENTS = {
             "python -m agents.template_enforcer --folder 'Meeting Notes' --template 'Templates/Meeting.md' --fix",
         ],
     },
+    "git_sync": {
+        "description": "Sync git commits into Obsidian changelog & product docs",
+        "usage": [
+            "python -m agents.git_sync list",
+            "python -m agents.git_sync add --name 'My App' --repo-path /path/to/repo --changelog-path /vault/Changelog.md --product-doc-path /vault/Product.md",
+            "python -m agents.git_sync sync --project-id <id>",
+            "python -m agents.git_sync sync-all",
+            "python -m agents.git_sync remove --project-id <id>",
+        ],
+    },
 }
 
 

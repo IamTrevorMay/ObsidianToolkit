@@ -35,6 +35,9 @@ def __getattr__(name):
     if name == "TemplateEnforcerAgent":
         from .template_enforcer import TemplateEnforcerAgent
         return TemplateEnforcerAgent
+    if name == "GitSyncAgent":
+        from .git_sync import GitSyncAgent
+        return GitSyncAgent
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 
@@ -50,4 +53,5 @@ __all__ = [
     "EmptyFolderPrunerAgent",
     "WeeklyDigestAgent",
     "TemplateEnforcerAgent",
+    "GitSyncAgent",
 ]

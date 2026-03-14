@@ -93,6 +93,7 @@ enum SidebarTab: String, CaseIterable, Identifiable {
     case agentRunner = "Agent Runner"
     case vaultBrowser = "Vault Browser"
     case reports = "Reports"
+    case gitSync = "Git Sync"
     case settings = "Settings"
 
     var id: String { rawValue }
@@ -103,6 +104,7 @@ enum SidebarTab: String, CaseIterable, Identifiable {
         case .agentRunner: return "terminal"
         case .vaultBrowser: return "folder"
         case .reports: return "doc.text.magnifyingglass"
+        case .gitSync: return "arrow.triangle.2.circlepath"
         case .settings: return "gear"
         }
     }
