@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-task-sync",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Syncs My Board tasks to Obsidian daily notes",
+  "main": "index.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2",
+    "dotenv": "^16"
+  }
+}

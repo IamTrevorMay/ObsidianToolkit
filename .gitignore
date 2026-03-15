@@ -24,6 +24,12 @@ DerivedData/
 *.moved-aside
 build/
 
+# Node
+node_modules/
+
 # Credentials
 *.env
 config.json
+
+# Sync logs
+sync/sync.log
