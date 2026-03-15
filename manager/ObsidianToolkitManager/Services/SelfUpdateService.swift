@@ -42,8 +42,8 @@ enum SelfUpdateService {
     }
 
     static func install(managerPath: String) -> AsyncStream<ProcessOutput> {
-        let buildApp = managerPath + "/build/Build/Products/Release/ObsidianToolkitManager.app"
-        let dest = "/Applications/ObsidianToolkitManager.app"
+        let buildApp = managerPath + "/build/Build/Products/Release/Obsidian Toolkit Manager.app"
+        let dest = "/Applications/Obsidian Toolkit Manager.app"
 
         return AsyncStream { continuation in
             let fm = FileManager.default
@@ -59,6 +59,12 @@ enum SelfUpdateService {
                     try fm.removeItem(atPath: dest)
                 }
                 try fm.copyItem(atPath: buildApp, toPath: dest)
+
+                // Touch the app bundle so macOS knows the icon changed
+                let destURL = URL(fileURLWithPath: dest)
+                try? fm.setAttributes([.modificationDate: Date()], ofItemAtPath: dest)
+                NSWorkspace.shared.noteFileSystemChanged(destURL.path)
+
                 continuation.yield(.stdout("Installed to \(dest)"))
                 continuation.yield(.exit(0))
             } catch {
@@ -70,7 +76,7 @@ enum SelfUpdateService {
     }
 
     static func restart(managerPath: String) {
-        let appPath = "/Applications/ObsidianToolkitManager.app"
+        let appPath = "/Applications/Obsidian Toolkit Manager.app"
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/open")
         process.arguments = ["-n", appPath]

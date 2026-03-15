@@ -17,8 +17,6 @@ targets:
     platform: macOS
     sources:
       - path: ObsidianToolkitManager
-        excludes:
-          - Resources/Assets.xcassets/AppIcon.appiconset
     resources:
       - path: ObsidianToolkitManager/Resources/Assets.xcassets
       - path: ObsidianToolkitManager/Resources/report_template.html
