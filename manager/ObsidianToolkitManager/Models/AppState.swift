@@ -10,10 +10,48 @@ final class AppState {
     var lastAuditSummary: AuditSummary?
     var selectedAgentId: String?
     var shellEnvironment: [String: String] = ShellEnvironment.capture()
+    let syncDaemon = SyncDaemonService()
+
+    var repoPath: String {
+        get { UserDefaults.standard.string(forKey: "repoPath") ?? "" }
+        set { UserDefaults.standard.set(newValue, forKey: "repoPath") }
+    }
 
     var toolkitPath: String {
-        get { UserDefaults.standard.string(forKey: "toolkitPath") ?? "" }
+        get {
+            if !repoPath.isEmpty { return repoPath + "/toolkit" }
+            return UserDefaults.standard.string(forKey: "toolkitPath") ?? ""
+        }
         set { UserDefaults.standard.set(newValue, forKey: "toolkitPath") }
+    }
+
+    var syncPath: String { repoPath.isEmpty ? "" : repoPath + "/sync" }
+    var managerPath: String { repoPath.isEmpty ? "" : repoPath + "/manager" }
+
+    var autoStartSync: Bool {
+        get {
+            if UserDefaults.standard.object(forKey: "autoStartSync") == nil { return true }
+            return UserDefaults.standard.bool(forKey: "autoStartSync")
+        }
+        set { UserDefaults.standard.set(newValue, forKey: "autoStartSync") }
+    }
+
+    var nodePath: String {
+        get {
+            if let saved = UserDefaults.standard.string(forKey: "nodePath"), !saved.isEmpty {
+                return saved
+            }
+            if let path = shellEnvironment["PATH"] {
+                for dir in path.components(separatedBy: ":") {
+                    let candidate = (dir as NSString).appendingPathComponent("node")
+                    if FileManager.default.isExecutableFile(atPath: candidate) {
+                        return candidate
+                    }
+                }
+            }
+            return "/usr/local/bin/node"
+        }
+        set { UserDefaults.standard.set(newValue, forKey: "nodePath") }
     }
 
     var pythonPath: String {

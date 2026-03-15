@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		18BFCDD84B3352B1E875696A /* AgentDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CE2B65203C260F2CE9A56A /* AgentDiscoveryService.swift */; };
+		210E0B8A88ADDC86F6667A7C /* SelfUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B33847FAA6B1FFB8D1CFD /* SelfUpdateService.swift */; };
 		252518559590586B94C3EC69 /* report_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 93096A1F52E5A28802508F93 /* report_template.html */; };
 		26B0D9DC12BECE9F8A04EDAB /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA1868668DD14589E18C40D /* ReportDetailView.swift */; };
 		35199C7A2F6332340ADDADDF /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDFC6E5403349556CC4780 /* ConfigService.swift */; };
 		374ACF09395A0EA7A73C3BAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F314B3BD51FA5BB431014B /* ContentView.swift */; };
 		3AB831DDC7168B9A7513DFBD /* VaultBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E9ECB4873E007BF3CC57 /* VaultBrowserView.swift */; };
 		40688F46080D3AD185E0F684 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9E1259AF49A4098B8F1C7 /* DashboardView.swift */; };
+		47D607CDE57B046B589911F1 /* GitSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62187CADCC0614A5AF771C /* GitSyncService.swift */; };
 		50647C283D9FA54CF8F69F71 /* AgentRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0ABE6C6A0D843FF78CA0D /* AgentRun.swift */; };
 		52F3F60ECAE83E334638CCE9 /* RunOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9922F8D8A3EE103B479A13 /* RunOutputView.swift */; };
 		6063ABA2801FBB4BEFCA9F4D /* VaultBrowserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDD79FBB772BE0864662EDD /* VaultBrowserService.swift */; };
@@ -23,10 +25,16 @@
 		77DD1641DC8C077041408A4E /* VaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8633FB0D7F9A8DF43519B /* VaultConfig.swift */; };
 		78AED07536D4B5D6CD5231CD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12431AA0586B348F606EFA /* SettingsView.swift */; };
 		8089A68F597A48B73198D2CC /* AgentRunnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72076E51AD11A14E390684C0 /* AgentRunnerService.swift */; };
+		80C8AE97AFEF1EFE52145E14 /* GitSyncProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3812CEBCFB0D0B8CAA3F02 /* GitSyncProjectCard.swift */; };
+		9893747C3EC0F3C584732CAC /* GitSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16995FA51724CDA6018000B1 /* GitSyncView.swift */; };
 		9AEA9C3052F9595EA89477CE /* ObsidianToolkitManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A9E111AF3255B08BADBE92 /* ObsidianToolkitManagerApp.swift */; };
 		9D525A4634D45DA5EA1ADF3D /* AgentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC1937748BC1B9A73E5B7C /* AgentCard.swift */; };
+		A4971561EFD77AF7D9B51CF0 /* AddGitSyncProjectSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9566F769D777071F7E1494B /* AddGitSyncProjectSheet.swift */; };
 		A8DE7FC095A799548C84F178 /* VaultNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CEDF41A7AC0723BFF65D74 /* VaultNode.swift */; };
 		AE473EBE3F77F55563F8D722 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CAA1C19231068CCB9AFA84 /* ProcessRunner.swift */; };
+		B3E03DC7D1E8E61E0AB9AB29 /* SyncDaemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED56179D70BE362040A0ED /* SyncDaemonService.swift */; };
+		B953680D7FE661B51CE46D21 /* GitSyncProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3C5BB11321EAEF1B6D9163 /* GitSyncProject.swift */; };
+		BFD5458F2AD4FE769113B368 /* SyncStatusCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD6DC34CDB1D7F094F1A5B /* SyncStatusCard.swift */; };
 		C41C653A7B321A639A45302D /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A4E2E64EE9602D7DFAC189 /* ReportListView.swift */; };
 		CE932098D2C674D6BB537972 /* VaultHealthCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAD6C08DAC633DDD314DD7 /* VaultHealthCard.swift */; };
 		D957BEC346CB1C1656DA5A8C /* AgentManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0594D9B7F8CCEE6B8DA0FED /* AgentManifest.swift */; };
@@ -41,10 +49,12 @@
 		09C9E1259AF49A4098B8F1C7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		0A2091F2D43A04701595D4AB /* ObsidianToolkitManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObsidianToolkitManager.entitlements; sourceTree = "<group>"; };
 		0DA1868668DD14589E18C40D /* ReportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
+		16995FA51724CDA6018000B1 /* GitSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSyncView.swift; sourceTree = "<group>"; };
 		21962BA68F4220F8CA5D5161 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		25CE2B65203C260F2CE9A56A /* AgentDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDiscoveryService.swift; sourceTree = "<group>"; };
 		2ED0ABE6C6A0D843FF78CA0D /* AgentRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentRun.swift; sourceTree = "<group>"; };
 		32DC1937748BC1B9A73E5B7C /* AgentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCard.swift; sourceTree = "<group>"; };
+		4A62187CADCC0614A5AF771C /* GitSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSyncService.swift; sourceTree = "<group>"; };
 		4B9922F8D8A3EE103B479A13 /* RunOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunOutputView.swift; sourceTree = "<group>"; };
 		56A9E111AF3255B08BADBE92 /* ObsidianToolkitManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianToolkitManagerApp.swift; sourceTree = "<group>"; };
 		571E47C25AEB4C57195179F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,17 +65,23 @@
 		8B12431AA0586B348F606EFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		90CEDF41A7AC0723BFF65D74 /* VaultNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultNode.swift; sourceTree = "<group>"; };
 		93096A1F52E5A28802508F93 /* report_template.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = report_template.html; sourceTree = "<group>"; };
+		A65B33847FAA6B1FFB8D1CFD /* SelfUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfUpdateService.swift; sourceTree = "<group>"; };
 		A71779B5ABDABEC12C076860 /* MarkdownRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
 		A7F314B3BD51FA5BB431014B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8CAA1C19231068CCB9AFA84 /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		AFED56179D70BE362040A0ED /* SyncDaemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDaemonService.swift; sourceTree = "<group>"; };
 		AFFDFC6E5403349556CC4780 /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		BB3812CEBCFB0D0B8CAA3F02 /* GitSyncProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSyncProjectCard.swift; sourceTree = "<group>"; };
 		C0594D9B7F8CCEE6B8DA0FED /* AgentManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentManifest.swift; sourceTree = "<group>"; };
 		DBDD79FBB772BE0864662EDD /* VaultBrowserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBrowserService.swift; sourceTree = "<group>"; };
 		E356F5315508888F015B5217 /* AgentParameterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentParameterForm.swift; sourceTree = "<group>"; };
 		E50528E3D3D29B51F5301DD7 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		E7AD6DC34CDB1D7F094F1A5B /* SyncStatusCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncStatusCard.swift; sourceTree = "<group>"; };
+		E9566F769D777071F7E1494B /* AddGitSyncProjectSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGitSyncProjectSheet.swift; sourceTree = "<group>"; };
 		F015E9ECB4873E007BF3CC57 /* VaultBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBrowserView.swift; sourceTree = "<group>"; };
 		F1AFFA4ADE606178FF32AAFE /* AgentRunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentRunnerView.swift; sourceTree = "<group>"; };
 		F4487A4B3A161CEF1B04FA9A /* MarkdownPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownPreviewView.swift; sourceTree = "<group>"; };
+		FF3C5BB11321EAEF1B6D9163 /* GitSyncProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSyncProject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -109,6 +125,7 @@
 			children = (
 				AF3957C2DF5431CD5683365C /* AgentRunner */,
 				B72495D1F8401792E83D4E5E /* Dashboard */,
+				AF8100E0CAC5540F5EF4054F /* GitSync */,
 				D5E9BADA6A55ABF2F06A8033 /* Reports */,
 				A5B08E928441BB37733A945A /* Settings */,
 				9EB9A3DCA7516441746037F4 /* VaultBrowser */,
@@ -157,12 +174,23 @@
 			path = AgentRunner;
 			sourceTree = "<group>";
 		};
+		AF8100E0CAC5540F5EF4054F /* GitSync */ = {
+			isa = PBXGroup;
+			children = (
+				E9566F769D777071F7E1494B /* AddGitSyncProjectSheet.swift */,
+				BB3812CEBCFB0D0B8CAA3F02 /* GitSyncProjectCard.swift */,
+				16995FA51724CDA6018000B1 /* GitSyncView.swift */,
+			);
+			path = GitSync;
+			sourceTree = "<group>";
+		};
 		B190D855ACB8C1C26FC527E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C0594D9B7F8CCEE6B8DA0FED /* AgentManifest.swift */,
 				2ED0ABE6C6A0D843FF78CA0D /* AgentRun.swift */,
 				21962BA68F4220F8CA5D5161 /* AppState.swift */,
+				FF3C5BB11321EAEF1B6D9163 /* GitSyncProject.swift */,
 				72D8633FB0D7F9A8DF43519B /* VaultConfig.swift */,
 				90CEDF41A7AC0723BFF65D74 /* VaultNode.swift */,
 			);
@@ -174,6 +202,7 @@
 			children = (
 				32DC1937748BC1B9A73E5B7C /* AgentCard.swift */,
 				09C9E1259AF49A4098B8F1C7 /* DashboardView.swift */,
+				E7AD6DC34CDB1D7F094F1A5B /* SyncStatusCard.swift */,
 				5ADAD6C08DAC633DDD314DD7 /* VaultHealthCard.swift */,
 			);
 			path = Dashboard;
@@ -193,7 +222,10 @@
 				25CE2B65203C260F2CE9A56A /* AgentDiscoveryService.swift */,
 				72076E51AD11A14E390684C0 /* AgentRunnerService.swift */,
 				AFFDFC6E5403349556CC4780 /* ConfigService.swift */,
+				4A62187CADCC0614A5AF771C /* GitSyncService.swift */,
 				E50528E3D3D29B51F5301DD7 /* ReportService.swift */,
+				A65B33847FAA6B1FFB8D1CFD /* SelfUpdateService.swift */,
+				AFED56179D70BE362040A0ED /* SyncDaemonService.swift */,
 				DBDD79FBB772BE0864662EDD /* VaultBrowserService.swift */,
 			);
 			path = Services;
@@ -276,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4971561EFD77AF7D9B51CF0 /* AddGitSyncProjectSheet.swift in Sources */,
 				9D525A4634D45DA5EA1ADF3D /* AgentCard.swift in Sources */,
 				18BFCDD84B3352B1E875696A /* AgentDiscoveryService.swift in Sources */,
 				D957BEC346CB1C1656DA5A8C /* AgentManifest.swift in Sources */,
@@ -287,6 +320,10 @@
 				35199C7A2F6332340ADDADDF /* ConfigService.swift in Sources */,
 				374ACF09395A0EA7A73C3BAC /* ContentView.swift in Sources */,
 				40688F46080D3AD185E0F684 /* DashboardView.swift in Sources */,
+				B953680D7FE661B51CE46D21 /* GitSyncProject.swift in Sources */,
+				80C8AE97AFEF1EFE52145E14 /* GitSyncProjectCard.swift in Sources */,
+				47D607CDE57B046B589911F1 /* GitSyncService.swift in Sources */,
+				9893747C3EC0F3C584732CAC /* GitSyncView.swift in Sources */,
 				62D7FBFA5F302BAD0BD11E4E /* MarkdownPreviewView.swift in Sources */,
 				6B4C718B07633E1EE245D6BA /* MarkdownRenderer.swift in Sources */,
 				9AEA9C3052F9595EA89477CE /* ObsidianToolkitManagerApp.swift in Sources */,
@@ -295,7 +332,10 @@
 				C41C653A7B321A639A45302D /* ReportListView.swift in Sources */,
 				F700D8FA0E20886FC6AAE24D /* ReportService.swift in Sources */,
 				52F3F60ECAE83E334638CCE9 /* RunOutputView.swift in Sources */,
+				210E0B8A88ADDC86F6667A7C /* SelfUpdateService.swift in Sources */,
 				78AED07536D4B5D6CD5231CD /* SettingsView.swift in Sources */,
+				B3E03DC7D1E8E61E0AB9AB29 /* SyncDaemonService.swift in Sources */,
+				BFD5458F2AD4FE769113B368 /* SyncStatusCard.swift in Sources */,
 				6063ABA2801FBB4BEFCA9F4D /* VaultBrowserService.swift in Sources */,
 				3AB831DDC7168B9A7513DFBD /* VaultBrowserView.swift in Sources */,
 				77DD1641DC8C077041408A4E /* VaultConfig.swift in Sources */,

@@ -9,6 +9,7 @@ struct DashboardView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
                 VaultHealthCard(summary: appState.lastAuditSummary)
+                SyncStatusCard()
 
                 ForEach(appState.agents) { agent in
                     AgentCard(

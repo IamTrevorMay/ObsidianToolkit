@@ -29,11 +29,23 @@ struct ObsidianToolkitManagerApp: App {
         // Capture shell environment (so we see ~/.zshrc exports like API keys)
         appState.loadShellEnvironment()
 
-        // Set default toolkit path if not configured
-        if appState.toolkitPath.isEmpty {
-            let defaultPath = NSString("~/Desktop/ObsidianTools/toolkit").expandingTildeInPath
-            if FileManager.default.fileExists(atPath: defaultPath) {
-                appState.toolkitPath = defaultPath
+        // Migrate or detect repo path
+        if appState.repoPath.isEmpty {
+            // Migrate from old toolkitPath if it ends in /toolkit
+            if let oldPath = UserDefaults.standard.string(forKey: "toolkitPath"),
+               oldPath.hasSuffix("/toolkit") {
+                let candidate = String(oldPath.dropLast("/toolkit".count))
+                if FileManager.default.fileExists(atPath: candidate + "/toolkit/manifest.json") {
+                    appState.repoPath = candidate
+                }
+            }
+
+            // Auto-detect canonical repo location
+            if appState.repoPath.isEmpty {
+                let defaultRepo = NSString("~/Desktop/ObsidianToolkitManager").expandingTildeInPath
+                if FileManager.default.fileExists(atPath: defaultRepo + "/toolkit/manifest.json") {
+                    appState.repoPath = defaultRepo
+                }
             }
         }
 
@@ -49,5 +61,23 @@ struct ObsidianToolkitManagerApp: App {
 
         // Load audit summary
         appState.lastAuditSummary = ReportService.parseAuditSummary(toolkitPath: appState.toolkitPath)
+
+        // Auto-start sync daemon
+        if appState.autoStartSync, !appState.syncPath.isEmpty {
+            appState.syncDaemon.start(
+                syncPath: appState.syncPath,
+                nodePath: appState.nodePath,
+                environment: appState.shellEnvironment
+            )
+        }
+
+        // Stop sync on app termination
+        NotificationCenter.default.addObserver(
+            forName: NSApplication.willTerminateNotification,
+            object: nil,
+            queue: .main
+        ) { _ in
+            appState.syncDaemon.stop()
+        }
     }
 }
