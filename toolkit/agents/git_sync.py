@@ -96,9 +96,14 @@ class GitSyncAgent(Agent):
                 })
         return commits
 
-    def _get_diff(self, repo_path: str, commit_hash: str) -> str:
+    def _get_diff(self, repo_path: str, commit_hash: str, max_lines: int = 200) -> str:
         try:
-            return self._git(repo_path, "diff", f"{commit_hash}~1", commit_hash)
+            diff = self._git(repo_path, "diff", "--stat", f"{commit_hash}~1", commit_hash)
+            full = self._git(repo_path, "diff", f"{commit_hash}~1", commit_hash)
+            lines = full.splitlines()
+            if len(lines) > max_lines:
+                return diff + "\n\n" + "\n".join(lines[:max_lines]) + f"\n\n... (truncated {len(lines) - max_lines} lines)"
+            return diff + "\n\n" + full
         except RuntimeError:
             return "Initial commit"
 

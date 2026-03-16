@@ -153,25 +153,20 @@ struct SettingsView: View {
 
     private var apiSection: some View {
         Section("API") {
-            TextField("Environment variable name (e.g. ANTHROPIC_API_KEY)", text: $apiKeyEnv)
-                .help("The name of the environment variable that holds your API key — not the key itself.")
-
-            if apiKeyEnv.hasPrefix("sk-") {
-                HStack {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundStyle(.yellow)
-                    Text("This field should contain the variable name (e.g. ANTHROPIC_API_KEY), not the key itself.")
-                        .font(.caption)
-                        .foregroundStyle(.orange)
-                }
-            }
+            SecureField("Anthropic API Key", text: Binding(
+                get: { appState.apiKey },
+                set: { appState.apiKey = $0 }
+            ))
+            .help("Your Anthropic API key (starts with sk-ant-). Stored locally on this Mac.")
 
             HStack {
-                let envVar = apiKeyEnv.isEmpty ? "ANTHROPIC_API_KEY" : apiKeyEnv
-                let hasKey = !envVar.hasPrefix("sk-") && !envVar.isEmpty && appState.shellEnvironment[envVar] != nil
+                let hasKey = !appState.apiKey.isEmpty || {
+                    let envVar = apiKeyEnv.isEmpty ? "ANTHROPIC_API_KEY" : apiKeyEnv
+                    return appState.shellEnvironment[envVar] != nil
+                }()
                 Image(systemName: hasKey ? "checkmark.circle.fill" : "xmark.circle.fill")
                     .foregroundStyle(hasKey ? .green : .red)
-                Text(hasKey ? "API key found in $\(envVar)" : "API key not found in $\(envVar)")
+                Text(hasKey ? "API key configured" : "No API key — AI features will be unavailable")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -194,7 +189,7 @@ struct SettingsView: View {
                         appState.syncDaemon.start(
                             syncPath: appState.syncPath,
                             nodePath: appState.nodePath,
-                            environment: appState.shellEnvironment
+                            environment: appState.effectiveEnvironment
                         )
                     }
                 }
@@ -420,7 +415,7 @@ struct SettingsView: View {
     }
 
     private func runUpdate() async {
-        let env = appState.shellEnvironment
+        let env = appState.effectiveEnvironment
         let managerPath = appState.managerPath
         let repoPath = appState.repoPath
         updateOutput = []

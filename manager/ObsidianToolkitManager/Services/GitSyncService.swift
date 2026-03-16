@@ -32,12 +32,10 @@ struct GitSyncService {
         toolkitPath: String,
         environment: [String: String] = [:]
     ) -> (UUID, AsyncStream<ProcessOutput>) {
-        var arguments = ["-m", "agents.git_sync"]
+        let configPath = (toolkitPath as NSString).appendingPathComponent("config.json")
+        var arguments = ["-m", "agents.git_sync", "--config", configPath]
         arguments.append(command)
         arguments.append(contentsOf: args)
-
-        let configPath = (toolkitPath as NSString).appendingPathComponent("config.json")
-        arguments.append(contentsOf: ["--config", configPath])
 
         let stream = AsyncStream<ProcessOutput> { continuation in
             let process = Process()

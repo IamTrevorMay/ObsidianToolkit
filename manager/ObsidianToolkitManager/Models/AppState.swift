@@ -36,6 +36,21 @@ final class AppState {
         set { UserDefaults.standard.set(newValue, forKey: "autoStartSync") }
     }
 
+    var apiKey: String {
+        get { UserDefaults.standard.string(forKey: "anthropicApiKey") ?? "" }
+        set { UserDefaults.standard.set(newValue, forKey: "anthropicApiKey") }
+    }
+
+    /// Shell environment merged with any user-provided API key.
+    var effectiveEnvironment: [String: String] {
+        var env = shellEnvironment
+        let envVarName = config?.anthropicApiKeyEnv ?? "ANTHROPIC_API_KEY"
+        if !apiKey.isEmpty {
+            env[envVarName] = apiKey
+        }
+        return env
+    }
+
     var nodePath: String {
         get {
             if let saved = UserDefaults.standard.string(forKey: "nodePath"), !saved.isEmpty {

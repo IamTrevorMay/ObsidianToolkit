@@ -1,0 +1,52 @@
+[
+  {
+    "branch": "main",
+    "changelog_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Mayday Studio/Changelog (Mayday Studio).md",
+    "enabled": true,
+    "id": "1773549053_2ecb19",
+    "last_commit": "f0b214bf6dfc34418d9e4dc1ad9b8f70bd7ec1ac",
+    "name": "Mayday Studio",
+    "product_doc_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Mayday Studio/Product Doc (Mayday Studio).md",
+    "repo_path": "/Users/trevor/Desktop/Mayday-Studio"
+  },
+  {
+    "branch": "main",
+    "changelog_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Triton Tools/Changelog (Tritol Tools).md",
+    "enabled": true,
+    "id": "1773550024_34f6e3",
+    "last_commit": "7972eacfb2d21ac4f28dacc6bcfe563360da9547",
+    "name": "Triton Tools",
+    "product_doc_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Triton Tools/Product Doc (Tritol Tools).md",
+    "repo_path": "/Users/trevor/Desktop/Triton-Tools"
+  },
+  {
+    "branch": "main",
+    "changelog_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Obsidian Toolkit/Changelog (Obsidian Toolkit).md",
+    "enabled": true,
+    "id": "1773551153_9017c6",
+    "last_commit": "224c8b41e0f265162e3d10a9c7fe4683b15622a1",
+    "name": "Obsidian Toolkit",
+    "product_doc_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Obsidian Toolkit/Product Doc (Obsidian Toolkit).md",
+    "repo_path": "/Users/trevor/Desktop/ObsidianTools"
+  },
+  {
+    "branch": "main",
+    "changelog_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Mayday Create/Changelog (Mayday Create).md",
+    "enabled": true,
+    "id": "1773552147_3f5c9e",
+    "last_commit": "33c1d206f669d9011281f04fa6d6770f1575d7c0",
+    "name": "Mayday Create",
+    "product_doc_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/Mayday Create/Product Doc (Mayday Create).md",
+    "repo_path": "/Users/trevor/Desktop/MaydayCreate"
+  },
+  {
+    "branch": "main",
+    "changelog_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/NBP Portal/Changelog (NBP Portal).md",
+    "enabled": true,
+    "id": "1773584157_4cce32",
+    "last_commit": "01778952e7b8cef549d7966a160ba4736b98ea61",
+    "name": "NBP Portal",
+    "product_doc_path": "/Users/trevor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Trevor's Happy Place/Custom Tools/NBP Portal/Product Doc (NBP Portal).md",
+    "repo_path": "/Users/trevor/Desktop/NBP"
+  }
+]

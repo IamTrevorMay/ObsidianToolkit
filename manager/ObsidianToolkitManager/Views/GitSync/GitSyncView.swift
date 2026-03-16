@@ -79,6 +79,13 @@ struct GitSyncView: View {
                         Text("Output")
                             .font(.caption.bold())
                         Spacer()
+                        Button("Copy All") {
+                            NSPasteboard.general.clearContents()
+                            NSPasteboard.general.setString(outputLines.map(\.text).joined(separator: "\n"), forType: .string)
+                        }
+                        .buttonStyle(.borderless)
+                        .font(.caption)
+
                         Button("Clear") {
                             outputLines.removeAll()
                             showOutput = false
@@ -91,16 +98,11 @@ struct GitSyncView: View {
                     .background(.bar)
 
                     ScrollView {
-                        LazyVStack(alignment: .leading, spacing: 1) {
-                            ForEach(outputLines) { line in
-                                Text(line.text)
-                                    .font(.system(.caption, design: .monospaced))
-                                    .foregroundStyle(line.isStderr ? .secondary : .primary)
-                                    .textSelection(.enabled)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                        }
-                        .padding(6)
+                        Text(outputLines.map(\.text).joined(separator: "\n"))
+                            .font(.system(.caption, design: .monospaced))
+                            .textSelection(.enabled)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(6)
                     }
                     .background(Color(nsColor: .textBackgroundColor))
                     .frame(maxHeight: 150)
@@ -155,7 +157,7 @@ struct GitSyncView: View {
                 args: ["--project-id", project.id],
                 pythonPath: appState.pythonPath,
                 toolkitPath: appState.toolkitPath,
-                environment: appState.shellEnvironment
+                environment: appState.effectiveEnvironment
             )
 
             for await output in stream {
@@ -184,7 +186,7 @@ struct GitSyncView: View {
                 command: "sync-all",
                 pythonPath: appState.pythonPath,
                 toolkitPath: appState.toolkitPath,
-                environment: appState.shellEnvironment
+                environment: appState.effectiveEnvironment
             )
 
             for await output in stream {

@@ -189,7 +189,7 @@ struct AgentRunnerView: View {
                 parameterValues: values,
                 pythonPath: appState.pythonPath,
                 toolkitPath: appState.toolkitPath,
-                environment: appState.shellEnvironment
+                environment: appState.effectiveEnvironment
             )
 
             for await output in stream {
