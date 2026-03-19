@@ -1,0 +1,52 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-14
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        working-directory: manager
+        run: xcodegen generate
+
+      - name: Build app
+        working-directory: manager
+        run: |
+          xcodebuild \
+            -scheme ObsidianToolkitManager \
+            -configuration Release \
+            -derivedDataPath build \
+            build
+
+      - name: Package app as zip
+        working-directory: manager
+        run: |
+          cd build/Build/Products/Release
+          ditto -c -k --keepParent "Obsidian Toolkit Manager.app" "Obsidian-Toolkit-Manager-${GITHUB_REF_NAME#v}-arm64-mac.zip"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            manager/build/Build/Products/Release/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
